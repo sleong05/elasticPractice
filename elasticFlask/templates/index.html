@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sam's Elasticsearch Interface</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <h1>Hi this is Sam's uglier kibana to work with my backend</h1>
+
+    <h2>READ / SEARCH</h2>
+    <form id="searchForm">
+        <label for="searchIndex">Index Name:</label>
+        <input type="text" name="index" id="searchIndex" placeholder="my-index">
+
+        <label for="searchKeyword">Search Keyword:</label>
+        <input type="text" name="keyword" id="searchKeyword" placeholder="search term">
+
+        <input type="submit" value="Search">
+    </form>
+
+    <h2>CREATE</h2>
+    <form id="createForm">
+        <label for="createIndex">Index Name:</label>
+        <input type="text" name="index" id="createIndex" placeholder="my-index">
+
+        <label for="createId">Document ID (optional):</label>
+        <input type="text" name="docId" id="createId" placeholder="leave blank for auto-generated">
+
+        <label for="createData">Document Data (JSON):</label>
+        <input type="text" name="data" id="createData" placeholder='{"name": "test", "value": 123}'>
+
+        <input type="submit" value="Create Document">
+    </form>
+
+    <h2>UPDATE</h2>
+    <form id="updateForm">
+        <label for="updateIndex">Index Name:</label>
+        <input type="text" name="index" id="updateIndex" placeholder="my-index">
+
+        <label for="updateId">Document ID:</label>
+        <input type="text" name="docId" id="updateId" placeholder="document-id">
+
+        <label for="updateData">Updated Data (JSON):</label>
+        <input type="text" name="data" id="updateData" placeholder='{"name": "updated", "value": 456}'>
+
+        <input type="submit" value="Update Document">
+    </form>
+
+    <h2>DELETE</h2>
+    <form id="deleteForm">
+        <label for="deleteIndex">Index Name:</label>
+        <input type="text" name="index" id="deleteIndex" placeholder="my-index">
+
+        <label for="deleteId">Document ID:</label>
+        <input type="text" name="docId" id="deleteId" placeholder="document-id">
+
+        <input type="submit" value="Delete Document">
+    </form>
+
+    <h2>Results</h2>
+    <div id="results">Results will appear here...</div>
+
+    <!-- Link to external JavaScript -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
